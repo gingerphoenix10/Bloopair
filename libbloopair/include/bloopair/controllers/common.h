@@ -45,6 +45,9 @@ typedef enum {
     BLOOPAIR_CONTROLLER_SWITCH2_GAMECUBE,
 
     BLOOPAIR_CONTROLLER_STADIA               = 0x50,
+
+    BLOOPAIR_CONTROLLER_STEAM                = 0x60,
+    BLOOPAIR_CONTROLLER_STEAM2026,
 } BloopairControllerType;
 
 //! Bloopair Pro Controller buttons.

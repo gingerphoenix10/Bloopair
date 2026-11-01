@@ -26,6 +26,7 @@ void controllerModuleInit_dualshock4(void);
 void controllerModuleInit_dualshock3(void);
 void controllerModuleInit_stadia(void);
 void controllerModuleInit_switch2(void);
+void controllerModuleInit_steam2026(void);
 
 static int configuration_initialized = 0;
 
@@ -51,6 +52,7 @@ int Configuration_Init(void)
     controllerModuleInit_dualshock3();
     controllerModuleInit_stadia();
     controllerModuleInit_switch2();
+    controllerModuleInit_steam2026();
 
     return 0;
 }

@@ -79,6 +79,8 @@ ControllerOptionsScreen::ControllerOptionsScreen(const KPADController* controlle
             break;
         case BLOOPAIR_CONTROLLER_STADIA:
             break;
+        case BLOOPAIR_CONTROLLER_STEAM2026:
+            break;
         default: break;
     }
 

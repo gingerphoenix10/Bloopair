@@ -77,6 +77,8 @@ std::string GetNameForBloopairControllerType(BloopairControllerType type)
         return "Switch 2 Gamecube Controller";
     case BLOOPAIR_CONTROLLER_STADIA:
         return "Stadia Controller";
+    case BLOOPAIR_CONTROLLER_STEAM2026:
+        return "Steam Controller (2026)";
     default:
         return "Unknown Pro Controller";
     }

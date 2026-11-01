@@ -26,6 +26,7 @@
 #include <bloopair/controllers/switch_controller.h>
 #include <bloopair/controllers/xbox_one_controller.h>
 #include <bloopair/controllers/stadia_controller.h>
+#include <bloopair/controllers/steam2026_controller.h>
 
 namespace
 {
@@ -241,6 +242,32 @@ std::string GetButtonName(BloopairControllerType type, uint8_t button)
                 case STADIA_TRIGGER_L2: return "L2";
                 case STADIA_TRIGGER_R1: return "R1";
                 case STADIA_TRIGGER_L1: return "L1";
+            }
+            break;
+        case BLOOPAIR_CONTROLLER_STEAM2026:
+            switch (button) {
+                case STEAM_BUTTON_UP: return "\ue079";
+                case STEAM_BUTTON_DOWN: return "\ue07a";
+                case STEAM_BUTTON_LEFT: return "\ue07b";
+                case STEAM_BUTTON_RIGHT: return "\ue07c";
+                case STEAM_2026_TRIGGER_R1: return "R1";
+                case STEAM_2026_TRIGGER_L1: return "L1";
+                case STEAM_BUTTON_A: return "\ue000";
+                case STEAM_BUTTON_B: return "\ue001";
+                case STEAM_BUTTON_X: return "\ue002";
+                case STEAM_BUTTON_Y: return "\ue003";
+                case STEAM_BUTTON_LSTICK: return "\ue08a";
+                case STEAM_BUTTON_RSTICK: return "\ue08b";
+                case STEAM_BUTTON_STEAM: return "Steam";
+                case STEAM_2026_BUTTON_MENU: return "Menu";
+                case STEAM_2026_BUTTON_VIEW: return "View";
+                case STEAM_2026_TRIGGER_R2: return "R2";
+                case STEAM_2026_TRIGGER_L2: return "L2";
+                case STEAM_2026_BUTTON_QUICK_ACCESS: return "Quick Access";
+                case STEAM_2026_GRIP_L4: return "L4";
+                case STEAM_2026_GRIP_L5: return "L5";
+                case STEAM_2026_GRIP_R4: return "R4";
+                case STEAM_2026_GRIP_R5: return "R5";
             }
             break;
         default: break;

@@ -101,6 +101,9 @@ ControllerListOptionsScreen::ControllerListOptionsScreen(const KPADController* c
             case BLOOPAIR_CONTROLLER_STADIA:
                 BloopairIPC::GetCustomConfiguration(mController->GetChannel(), mCustomConfiguration.stadia);
                 break;
+            case BLOOPAIR_CONTROLLER_STEAM2026:
+                BloopairIPC::GetCustomConfiguration(mController->GetChannel(), mCustomConfiguration.steam2026);
+                break;
             default: break;
         }
     }
@@ -366,6 +369,10 @@ void ControllerListOptionsScreen::SaveAndApply()
                 BloopairIPC::ApplyCustomConfiguration(bda.data(), mCustomConfiguration.stadia);
                 cfg.SetCustomConfiguraion(mCustomConfiguration.stadia);
                 break;
+            case BLOOPAIR_CONTROLLER_STEAM2026:
+                BloopairIPC::ApplyCustomConfiguration(bda.data(), mCustomConfiguration.steam2026);
+                cfg.SetCustomConfiguraion(mCustomConfiguration.steam2026);
+                break;
             default: break;
         }
     }
@@ -439,6 +446,10 @@ void ControllerListOptionsScreen::SaveAndApplyAll()
             case BLOOPAIR_CONTROLLER_STADIA:
                 BloopairIPC::ApplyCustomConfiguration(type, mCustomConfiguration.stadia);
                 cfg.SetCustomConfiguraion(mCustomConfiguration.stadia);
+                break;
+            case BLOOPAIR_CONTROLLER_STEAM2026:
+                BloopairIPC::ApplyCustomConfiguration(type, mCustomConfiguration.steam2026);
+                cfg.SetCustomConfiguraion(mCustomConfiguration.steam2026);
                 break;
             default: break;
         }

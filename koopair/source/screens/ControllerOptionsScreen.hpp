@@ -27,6 +27,7 @@
 #include <bloopair/controllers/xbox_one_controller.h>
 #include <bloopair/controllers/switch2_controller.h>
 #include <bloopair/controllers/stadia_controller.h>
+#include <bloopair/controllers/steam2026_controller.h>
 
 class ControllerOptionsScreen : public Screen
 {
@@ -40,6 +41,7 @@ public:
         XboxOneConfiguration xboxOne;
         Switch2Configuration switch2;
         StadiaConfiguration stadia;
+        Steam2026Configuration steam2026;
     };
 
     ControllerOptionsScreen(const KPADController* controller, BloopairCommonConfiguration& common, CustomConfiguration& custom);

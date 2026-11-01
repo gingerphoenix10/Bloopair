@@ -28,6 +28,10 @@
 // - <https://github.com/devkitPro/wut/blob/master/include/padscore/wpad.h>
 // - <https://github.com/torvalds/linux/blob/master/drivers/hid/hid-wiimote-modules.c#L1627>
 
+#define WPAD_PRO_AXIS_BASE            0x800
+#define WPAD_PRO_AXIS_NORMALIZE_VALUE 1140
+#define WPAD_PRO_AXIS_NORMALIZE_RANGE (WPAD_PRO_AXIS_NORMALIZE_VALUE * 2)
+
 typedef struct PACKED {
     uint8_t report_id;
     struct PACKED {

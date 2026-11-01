@@ -28,6 +28,7 @@
 #include <bloopair/controllers/xbox_one_controller.h>
 #include <bloopair/controllers/switch2_controller.h>
 #include <bloopair/controllers/stadia_controller.h>
+#include <bloopair/controllers/steam2026_controller.h>
 #include <bloopair/ipc.h>
 #include <padscore/kpad.h>
 
@@ -41,7 +42,8 @@ concept ConfigurationType = std::same_as<T, DualsenseConfiguration> ||
                             std::same_as<T, SwitchConfiguration> ||
                             std::same_as<T, XboxOneConfiguration> ||
                             std::same_as<T, Switch2Configuration> ||
-                            std::same_as<T, StadiaConfiguration>;
+                            std::same_as<T, StadiaConfiguration> ||
+                            std::same_as<T, Steam2026Configuration>;
 
 namespace detail
 {

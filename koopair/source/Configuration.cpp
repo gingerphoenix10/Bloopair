@@ -106,6 +106,7 @@ const std::map<BloopairControllerType, std::string> bloopairControllerTypes = {
     { BLOOPAIR_CONTROLLER_SWITCH2_PRO,           "Switch2-Pro", },
     { BLOOPAIR_CONTROLLER_SWITCH2_GAMECUBE,      "Switch2-Gamecube", },
     { BLOOPAIR_CONTROLLER_STADIA,                "Stadia", },
+    { BLOOPAIR_CONTROLLER_STEAM2026,             "Steam-2026", },
 };
 
 const std::map<std::string, BloopairControllerType> bloopairControllerTypeValues = {
@@ -126,6 +127,7 @@ const std::map<std::string, BloopairControllerType> bloopairControllerTypeValues
     { "Switch2-Pro",            BLOOPAIR_CONTROLLER_SWITCH2_PRO },
     { "Switch2-Gamecube",       BLOOPAIR_CONTROLLER_SWITCH2_GAMECUBE },
     { "Stadia",                 BLOOPAIR_CONTROLLER_STADIA },
+    { "Steam-2026",             BLOOPAIR_CONTROLLER_STEAM2026 },
 };
 
 bool HexToBDA(const std::string& hex, uint8_t* bda)
@@ -303,6 +305,15 @@ void Configuration::SetCustomConfiguraion(const Switch2Configuration& config)
 void Configuration::SetCustomConfiguraion(const StadiaConfiguration& config)
 {
     if (mControllerType != BLOOPAIR_CONTROLLER_STADIA) {
+        return;
+    }
+
+    // mJson["custom"]["someCustomField"] = config.SomeCustomField;
+}
+
+void Configuration::SetCustomConfiguraion(const Steam2026Configuration& config)
+{
+    if (mControllerType != BLOOPAIR_CONTROLLER_STEAM2026) {
         return;
     }
 

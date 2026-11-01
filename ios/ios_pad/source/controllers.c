@@ -19,10 +19,6 @@
 #include "utils.h"
 #include "device_info.h"
 
-#define WPAD_PRO_AXIS_BASE            0x800
-#define WPAD_PRO_AXIS_NORMALIZE_VALUE 1140
-#define WPAD_PRO_AXIS_NORMALIZE_RANGE (WPAD_PRO_AXIS_NORMALIZE_VALUE * 2)
-
 #define REPORT_THREAD_STACK_SIZE 0x800
 
 // send a report every 10 ms
@@ -126,6 +122,7 @@ void controllerInit_dualshock4(Controller* controller);
 void controllerInit_dualshock3(Controller* controller);
 void controllerInit_stadia(Controller* controller);
 void controllerInit_switch2(Controller* controller);
+void controllerInit_steam2026(Controller* controller);
 
 int initController(uint8_t* bda, uint8_t handle)
 {
@@ -209,6 +206,10 @@ int initController(uint8_t* bda, uint8_t handle)
             return 0;
         } else if (vendor_id == 0x18d1 && product_id == 0x9400) { // stadia controller
             controllerInit_stadia(controller);
+            return 0;
+        } else if (vendor_id == 0x28de && product_id == 0x1303)
+        {
+            controllerInit_steam2026(controller);
             return 0;
         }
     } else if (magic == MAGIC_SWITCH) {

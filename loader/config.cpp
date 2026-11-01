@@ -85,6 +85,7 @@ static const std::map<std::string, BloopairControllerType> bloopairControllerTyp
     { "Switch2-Pro",            BLOOPAIR_CONTROLLER_SWITCH2_PRO },
     { "Switch2-Gamecube",       BLOOPAIR_CONTROLLER_SWITCH2_GAMECUBE },
     { "Stadia",                 BLOOPAIR_CONTROLLER_STADIA },
+    { "Steam-2026",             BLOOPAIR_CONTROLLER_STEAM2026 },
 };
 
 static bool LoadCommonConfiguration(const nlohmann::json& common, IOSHandle handle, BloopairControllerType type, const uint8_t* bda)
@@ -206,6 +207,11 @@ static bool LoadStadiaCustomConfiguration(const nlohmann::json& custom, IOSHandl
     return true;
 }
 
+static bool LoadSteam2026CustomConfiguration(const nlohmann::json& custom, IOSHandle handle, BloopairControllerType type, const uint8_t* bda)
+{
+    return true;
+}
+
 static bool LoadCustomConfiguration(const nlohmann::json& custom, IOSHandle handle, BloopairControllerType type, const uint8_t* bda)
 {
     switch (type) {
@@ -233,6 +239,8 @@ static bool LoadCustomConfiguration(const nlohmann::json& custom, IOSHandle hand
             return LoadSwitch2CustomConfiguration(custom, handle, type, bda);
         case BLOOPAIR_CONTROLLER_STADIA:
             return LoadStadiaCustomConfiguration(custom, handle, type, bda);
+        case BLOOPAIR_CONTROLLER_STEAM2026:
+            return LoadSteam2026CustomConfiguration(custom, handle, type, bda);
         default: break;
     }
 
